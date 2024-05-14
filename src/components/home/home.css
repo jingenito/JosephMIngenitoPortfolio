@@ -1,12 +1,11 @@
 .main-container {
     display: flex; /* Use Flexbox */
-    height: 100vh; /* Full view height */
     width: 100vw;
+    min-height: 100vh;
 }
   
 .left-side, .right-side {
     width: 50%; /* Divide width equally */
-    height: 100vh; /* Full view height */
     overflow: hidden; /* Prevents overflow */
     display: flex;
     flex-direction: column;
@@ -16,4 +15,26 @@
   
 .right-side {
     overflow-y: auto; /* Enables vertical scrolling */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        min-height: auto; /* Adjust height for column layout */
+    }
+
+    .left-side, .right-side {
+        width: 100%; /* Full width for each section */
+        min-height: auto; /* Adjust height for content */
+    }
+
+    .left-side {
+        padding: 20px; /* Add some padding for better spacing */
+    }
+
+    .right-side {
+        overflow-y: visible; /* Disable vertical scrolling */
+        padding: 20px; /* Add some padding for better spacing */
+    }
 }
